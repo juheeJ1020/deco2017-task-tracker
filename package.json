@@ -2,7 +2,6 @@
   "name": "deco2017-task-tracker",
   "version": "1.0.0",
   "description": "Task tracking web application",
-  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "prestart": "parcel build ./public/index.html",
@@ -11,10 +10,10 @@
   "author": "Rob Dongas",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.3",
-    "parcel": "^2.8.3"
+    "parcel": "^2.9.1"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "sass": "^1.62.0"
+    "sass": "^1.62.1"
   }
 }
