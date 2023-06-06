@@ -10,16 +10,12 @@
     <body>
 
         <div class="container">
-            <div class="title">
-                <img src="..\image\STRE.png" alt="logo of DoStretching" class="logo" >
-                <h1>DoStretching</h1>
-            </div>
-            <div class="content">
-                <div class="quote">
-                    "Do what You Want"
-                    <header>
-                        <h1>Daily Stretching Tracker</h1>
-                    </header>
+            <button class="popup-button" onclick="showPopup()">+</button>
+
+            <div class="add"> 
+                <div class="popup" id="myPopup">
+                    <button class="close" onclick="closePopup()">x</button>
+                    <h1>Daily Stretching Tracker</h1>
                     <form id="taskform">
                         <div class="form-row">
                             <label for="taskName">Name</label>
@@ -70,16 +66,28 @@
                             <input type="submit">
                         </div>
                     </form>
-                    
                 </div>
+            </div>
+
+            <div class="title">
+                <img src="..\image\STRE.png" alt="logo of DoStretching" class="logo" >
+                <h1>DoStretching</h1>
+            </div>
+
+            <div class="content">
+                <div class="quote">
+                    "Do what You Want"                
+                </div>
+
                 <div class="list">
                     "What you did"
                     <h2>Tasks</h2>
                     <ul id="tasklist"></ul>
                     <script src="script.js"></script>
                 </div>
+
                 <div class="statistic">"Graph"</div>
-                <button class="popup-button">+</button>
+
             </div>
         </div>
     </body>

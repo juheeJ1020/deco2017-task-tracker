@@ -118,3 +118,17 @@ addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
 
 // Log the array to the console.
 console.log(taskList);
+
+
+
+// Function to show the pop-up
+function showPopup() {
+    var popup = document.getElementById("myPopup");
+    popup.style.display = "block";
+}
+
+// Function to close the pop-up
+function closePopup() {
+    var popup = document.getElementById("myPopup");
+    popup.style.display = "none";
+}
