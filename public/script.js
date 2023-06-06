@@ -5,22 +5,41 @@ const tasklist = document.getElementById("tasklist");
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    console.log(form.elements.taskType.value)
+    // console.log(form.elements.taskType.value)
+    const name = form.elements.taskName.value;
+    const part = form.elements.taskPart.value;
+    const duration = form.elements.taskDuration.value;
+    const purpose = form.elements.taskPurpose.value;
+    const feeling = form.elements.taskFeeling.value;
 
-    addTask(
-        form.elements.taskName.value,
-        form.elements.taskType.value,
-        form.elements.taskRate.value,
-        form.elements.taskTime.value,
-        form.elements.taskClient.value,
+    const task = addTask(
+        name,
+        part,
+        duration,
+        purpose,
+        feeling
     )
-    console.log(taskList)
+    // console.log(taskList)
+
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (tasks == null) {
+        tasks = [[name, part, duration, purpose, feeling]];
+    } else {
+        tasks.push([name, part, duration, purpose, feeling]);
+    }
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+
+    // console.log(localStorage.getItem('tasks'));
+    console.log("hi");
+    console.log(JSON.parse(localStorage.getItem('tasks')));
 })
 
 function displayTask(task) {
     let item = document.createElement("li");
     item.setAttribute("data-id", task.id);
-    item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p>`;
+    item.innerHTML = `<p><strong>${task.name}</strong><br>${task.duration}<br>${task.feeling}</p>`;
 
     tasklist.appendChild(item);
 
@@ -43,69 +62,33 @@ function displayTask(task) {
         })
 
         // Make sure the deletion worked by logging out the whole array
-        console.log(taskList)
+        console.log(taskList);
+        console.log(JSON.parse(localStorage.getItem('tasks')));
 
         item.remove(); // Remove the task item from the page when button clicked
         // Because we used 'let' to define the item, this will always delete the right element
-
     })
-
-
 }
 
-
-
-
-// Create an object called 'task'
-// Populate the properties based on the provided data model
-
-// Commented out now the object creation is included in the function
-
-// var task = {
-//   name: "Initial Sketches",
-//   type: "Concept Ideation",
-//   id: Date.now(),
-//   date: new Date().toISOString(),
-//   rate: 50,
-//   time: 5,
-//   client: "Google"
-// }
-
-// console.log(task);
+reset.addEventListener("click", (event) => {
+    localStorage.removeItem('tasks');
+})
 
 
 // Create an array called 'taskList'
 var taskList = [];
 
-// Create a function called 'addTask'
-// Give the function input parameters for: name, type, rate, time, client
-// Paste your object definition from above in the function
-// Replace the property values with the input paramaters
-// Add the object to the taskList array
-
-function addTask(name, type, rate, time, client) {
-
-    // Creating the object with the usual property:value syntax
-    // Create task object 
-    // let task = {
-    //   name: name,
-    //   type: type,
-    //   id: Date.now(),
-    //   date: new Date().toISOString(),
-    //   rate: rate,
-    //   time: time,
-    //   client: client
-    // }
+function addTask(name, part, duration, purpose, feeling) {
 
     // Creating the object, directly passing in the input parameters
     let task = {
         name,
-        type,
         id: Date.now(),
+        part,
+        duration,
+        purpose,
+        feeling,
         date: new Date().toISOString(),
-        rate,
-        time,
-        client
     }
 
     taskList.push(task);
@@ -114,10 +97,10 @@ function addTask(name, type, rate, time, client) {
 }
 
 // Call the function with test values for the input paramaters
-addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
+addTask("Stretching the neck", "neck", 30, "Has neck pain", "Pretty okay");
 
 // Log the array to the console.
-console.log(taskList);
+// console.log(taskList);
 
 
 

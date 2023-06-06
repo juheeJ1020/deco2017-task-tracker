@@ -24,10 +24,8 @@ html {
     position: fixed;
     left: 50%;
     top: 50%;
-    bottom: 20px;
-    right: 20px;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 500px;
     height: flex;
     padding: 20px;
     background-color: #afd3e2;
@@ -42,9 +40,7 @@ h1 {
 
 form {
     max-width: 500px;
-    height: 20vh;
     margin: 0 auto;
-    border: 2px solid rgb(151, 16, 16);
     padding: 2em 1em;
 }
 
@@ -65,7 +61,9 @@ form {
 }
 
 .close{
-    position: fixed;
+    position: absolute;
+    background-color: #afd3e2;
+    border-color: #146c94;
     top: 10;
     right: 10;
 }
@@ -75,7 +73,6 @@ form {
 }
 
 .title{
-    // width: 200px;
     width: 20vw;
     border: thin solid #146c94;
     background: linear-gradient(to bottom, transparent, rgb(212, 246, 255));
@@ -99,9 +96,9 @@ form {
     width: 100vw;
     display: flex;
     border: thin solid white;
-    // border: thin solid #146c94;
+    border: thin solid #146c94;
     width: 800px;
-    // background: linear-gradient(to bottom, transparent, rgb(166, 242, 255));
+    height: 100vh;
     background: radial-gradient(rgb(166, 242, 255) 0.5%, white);
     padding: 5px;
     margin:10px;
@@ -120,6 +117,13 @@ form {
     padding: 10px;
     margin: 10px;
     flex-basis: calc(66.66% - 20px);
+}
+
+.reset {
+    // position: fixed;
+    background-color: #afd3e2;
+    border-color: #146c94;
+
 }
 
 .statistic{

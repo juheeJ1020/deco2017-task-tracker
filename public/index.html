@@ -27,38 +27,41 @@
                             >
                         </div>
                         <div class="form-row">
-                            <label for="taskType">Type</label>
-                            <select id="taskType" name="taskType" required="true">
-                                <option value="">Select one</option>
-                                <option value="Concept Ideation">Concept Ideation</option>
-                                <option value="Wireframing">Wireframing</option>
-                                <option value="Application Coding">Application Coding</option>
+                            <label for="taskPart">Body Part</label>
+                            <select id="taskPart" name="taskPart" required="true">
+                                <option value="">Body Part</option>
+                                <option value="Concept Ideation">Neck</option>
+                                <option value="Wireframing">Shoulder</option>
+                                <option value="Application Coding">Back</option>
+                                <option value="Application Coding">Waist</option>
+                                <option value="Application Coding">Leg</option>
+                                <option value="Application Coding">Ankle</option>
                             </select>
                         </div>
                         <div class="form-row">
-                            <label for="taskRate">Rate</label>
+                            <label for="taskDuration">Duration (mins)</label>
                             <input
                                 type="number"
-                                name="taskRate"
-                                id="taskRate"
+                                name="taskDuration"
+                                id="taskDuration"
                                 required="true"
                             >
                         </div>
                         <div class="form-row">
-                            <label for="taskTime">Time</label>
-                            <input
-                                type="number"
-                                name="taskTime"
-                                id="taskTime"
-                                required="true"
-                            >
-                        </div>
-                        <div class="form-row">
-                            <label for="taskClient">Client</label>
+                            <label for="taskPurpose">Purpose</label>
                             <input
                                 type="text"
-                                name="taskClient"
-                                id="taskClient"
+                                name="taskPurpose"
+                                id="taskPurpose"
+                                required="true"
+                            >
+                        </div>
+                        <div class="form-row">
+                            <label for="taskFeeling">Feeling</label>
+                            <input
+                                type="text"
+                                name="taskFeeling"
+                                id="taskFeeling"
                                 required="true"
                             >
                         </div>
@@ -83,6 +86,7 @@
                     "What you did"
                     <h2>Tasks</h2>
                     <ul id="tasklist"></ul>
+                    <button class="reset">reset</button>
                     <script src="script.js"></script>
                 </div>
 
