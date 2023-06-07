@@ -19,7 +19,7 @@ form.addEventListener("submit", function (event) {
         purpose,
         feeling
     )
-    // console.log(taskList)
+
 
     let tasks = JSON.parse(localStorage.getItem('tasks'));
 
@@ -39,7 +39,14 @@ form.addEventListener("submit", function (event) {
 function displayTask(task) {
     let item = document.createElement("li");
     item.setAttribute("data-id", task.id);
-    item.innerHTML = `<p><strong>${task.name}</strong><br>${task.duration}<br>${task.feeling}</p>`;
+    item.innerHTML = `<p><strong>${task.name}</strong>
+    <br>${task.id}
+    <br>${task.date}
+    <br>${task.part}
+    <br>${task.duration}
+    <br>${task.purpose}
+    <br>${task.feeling}
+    </p>`;
 
     tasklist.appendChild(item);
 
@@ -67,12 +74,12 @@ function displayTask(task) {
 
         item.remove(); // Remove the task item from the page when button clicked
         // Because we used 'let' to define the item, this will always delete the right element
+        localStorage.removeItem('tasks');
+        
     })
+
 }
 
-reset.addEventListener("click", (event) => {
-    localStorage.removeItem('tasks');
-})
 
 
 // Create an array called 'taskList'
