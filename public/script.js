@@ -39,14 +39,14 @@ form.addEventListener("submit", function (event) {
 function displayTask(task) {
     let item = document.createElement("li");
     item.setAttribute("data-id", task.id);
-    item.innerHTML = `<p><strong>${task.name}</strong>
-    <br>${task.id}
-    <br>${task.date}
-    <br>${task.part}
-    <br>${task.duration}
-    <br>${task.purpose}
-    <br>${task.feeling}
-    </p>`;
+    item.innerHTML = `<div class='task'><p id='taskName'><strong><big>${task.name}</big></strong>
+    <i><small>- ${task.id}</small></i>
+    <br><small>${task.date}</small>
+    <br><b>Body:</b> ${task.part}
+    <br><b>Duration:</b> ${task.duration}
+    <br><b>Purpose:</b> ${task.purpose}
+    <br><b>Feeling:</b> ${task.feeling}
+    </p></div>`;
 
     tasklist.appendChild(item);
 
@@ -56,7 +56,7 @@ function displayTask(task) {
     // Setup delete button DOM elements
     let delButton = document.createElement("button");
     delButton.className = "remove";
-    let delButtonText = document.createTextNode("Remove");
+    let delButtonText = document.createTextNode("remove");
     delButton.appendChild(delButtonText);
     item.appendChild(delButton); // Adds a delete button to every task
 
@@ -148,3 +148,19 @@ function closePopup() {
     var popup = document.getElementById("myPopup");
     popup.style.display = "none";
 }
+
+
+// quote to motivate to stretch
+var quoteBox = document.getElementById("quote-box");
+var quotes = quoteBox.getElementsByClassName("quote");
+var currentIndex = 0;
+
+setInterval(function() {
+    currentIndex++;
+    if (currentIndex >= quotes.length) {
+    currentIndex = 0;
+    }
+    for (var i = 0; i < quotes.length; i++) {
+    quotes[i].style.left = (i - currentIndex) * 100 + "%";
+    }
+}, 4000);
