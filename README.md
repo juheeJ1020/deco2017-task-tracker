@@ -2,7 +2,7 @@
 
 This is a template for a task tracking application. It is using Parcel for development, but can be run and deployed on a Node server as well using Express.
 
-<best web size>
+best web size
     for mobile -> width: 767px
 
     for pc -> width: 1024px
@@ -11,7 +11,7 @@ This is a template for a task tracking application. It is using Parcel for devel
     website is build for pc user and landscape view.
 
 
-<Deployment procedures>
+Deployment procedures
     Do run this website you need to do:
         1. Install npm 
             put "npm install" in the terminal
@@ -20,7 +20,7 @@ This is a template for a task tracking application. It is using Parcel for devel
         3. Get local server address
             e.g. http://localhost:1234
 
-<Development process>
+Development process
     This website is for the users who need to track their daily stretching specially who has specific pain on their body parts, such as wrist pain, back pain or neck.
 
     This website contains a logo with the title of the website 'DoStretching', and some quotes that
