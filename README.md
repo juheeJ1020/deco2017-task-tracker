@@ -15,9 +15,10 @@ Deployment procedures
     Do run this website you need to do:
         1. Install npm 
             put "npm install" in the terminal
-        2. Run the code
+        2. Instal node.js
+        3. Run the code
             put "npm run dev" in the terminal
-        3. Get local server address
+        4. Get local server address
             e.g. http://localhost:1234
 
 Development process
