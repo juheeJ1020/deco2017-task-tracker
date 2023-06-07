@@ -55,7 +55,8 @@ function displayTask(task) {
 
     // Setup delete button DOM elements
     let delButton = document.createElement("button");
-    let delButtonText = document.createTextNode("Delete");
+    delButton.className = "remove";
+    let delButtonText = document.createTextNode("Remove");
     delButton.appendChild(delButtonText);
     item.appendChild(delButton); // Adds a delete button to every task
 
@@ -74,16 +75,41 @@ function displayTask(task) {
 
         item.remove(); // Remove the task item from the page when button clicked
         // Because we used 'let' to define the item, this will always delete the right element
-        localStorage.removeItem('tasks');
+        // localStorage.removeItem('tasks');
         
     })
 
 }
 
 
-
 // Create an array called 'taskList'
 var taskList = [];
+
+// function updateTasks() {
+//     let list = document.querySelector('list takelist');
+//     list.innerHTML = "";
+
+//     let tasks = JSON.parse(localStorage.getItem('tasks'));
+
+//     if (tasks !== null) {
+    
+//         tasks.forEach((task) => {
+//           let listItem = document.createElement('li');
+//           listItem.innerHTML = `<p><strong>${task.name}</strong>
+//               <br>${task.id}
+//               <br>${task.date}
+//               <br>${task.part}
+//               <br>${task.duration}
+//               <br>${task.purpose}
+//               <br>${task.feeling}
+//               </p>`;
+//           list.appendChild(taskList);
+//         })
+
+//         tasklist.appendChild(list);
+//       }
+// }
+
 
 function addTask(name, part, duration, purpose, feeling) {
 
