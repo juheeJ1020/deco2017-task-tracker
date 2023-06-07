@@ -5,7 +5,6 @@ const tasklist = document.getElementById("tasklist");
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // console.log(form.elements.taskType.value)
     const name = form.elements.taskName.value;
     const part = form.elements.taskPart.value;
     const duration = form.elements.taskDuration.value;
@@ -29,11 +28,6 @@ form.addEventListener("submit", function (event) {
         tasks.push([name, part, duration, purpose, feeling]);
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
-
-
-    // console.log(localStorage.getItem('tasks'));
-    console.log("hi");
-    console.log(JSON.parse(localStorage.getItem('tasks')));
 })
 
 function displayTask(task) {
@@ -74,9 +68,6 @@ function displayTask(task) {
         console.log(JSON.parse(localStorage.getItem('tasks')));
 
         item.remove(); // Remove the task item from the page when button clicked
-        // Because we used 'let' to define the item, this will always delete the right element
-        // localStorage.removeItem('tasks');
-        
     })
 
 }
@@ -84,32 +75,6 @@ function displayTask(task) {
 
 // Create an array called 'taskList'
 var taskList = [];
-
-// function updateTasks() {
-//     let list = document.querySelector('list takelist');
-//     list.innerHTML = "";
-
-//     let tasks = JSON.parse(localStorage.getItem('tasks'));
-
-//     if (tasks !== null) {
-    
-//         tasks.forEach((task) => {
-//           let listItem = document.createElement('li');
-//           listItem.innerHTML = `<p><strong>${task.name}</strong>
-//               <br>${task.id}
-//               <br>${task.date}
-//               <br>${task.part}
-//               <br>${task.duration}
-//               <br>${task.purpose}
-//               <br>${task.feeling}
-//               </p>`;
-//           list.appendChild(taskList);
-//         })
-
-//         tasklist.appendChild(list);
-//       }
-// }
-
 
 function addTask(name, part, duration, purpose, feeling) {
 
@@ -128,14 +93,6 @@ function addTask(name, part, duration, purpose, feeling) {
     displayTask(task);
 
 }
-
-// Call the function with test values for the input paramaters
-addTask("Stretching the neck", "neck", 30, "Has neck pain", "Pretty okay");
-
-// Log the array to the console.
-// console.log(taskList);
-
-
 
 // Function to show the pop-up
 function showPopup() {
